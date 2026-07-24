@@ -312,6 +312,12 @@ footer a{color:var(--on-dark);}
 
 .out-pill{display:inline-block;font-size:11px;letter-spacing:0.06em;font-weight:600;color:var(--bronze-dark);background:#f2e9df;border:1px solid #e3d3c1;padding:5px 11px;margin-bottom:14px;}
 .out-blurb{font-size:0.96rem;line-height:1.6;color:var(--ink-soft);margin:0 0 16px;max-width:64ch;}
+
+.out-filters{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 4px;}
+.out-filter{font-size:0.9rem;font-family:inherit;color:var(--ink-soft);background:var(--card);border:1px solid var(--border);padding:8px 16px;cursor:pointer;transition:all .15s ease;}
+.out-filter:hover{border-color:var(--bronze);}
+.out-filter.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.out-empty{margin-top:30px;color:var(--muted);font-size:0.95rem;}
 </style>
 </head>
 <body>
@@ -342,19 +348,25 @@ footer a{color:var(--on-dark);}
     <div class="wrap">
       <p class="eyebrow">Outputs</p>
       <h1>Research, published openly</h1>
-      <p class="lede">Peer-reviewed articles, plain-language companion pieces, and policy briefs from the FACT team. New outputs are added here as they are released, and are mobilized in both official languages.</p>
+      <p class="lede">Knowledge mobilization is the cornerstone of FACT — research is built to reach policy, practice, and the public, not to sit in academic silos. Findings are co-created with partners, published open-access, and mobilized in both official languages across a spectrum of formats: peer-reviewed articles, plain-language policy briefs, data visualizations, and public explainers.</p>
     </div>
   </div>
 
   <section>
     <div class="wrap">
-      <p class="section-label">Canadian Tax Journal · 2026</p>
-      <h2>Volume 74, Issue 2</h2>
-      <p class="measure">FACT's first set of published articles appears in the 2026 Policy Forum and Symposium of the <em>Canadian Tax Journal</em>, spanning tax administration, benefit delivery, and the case for a permanent public body on tax policy.</p>
+      <p class="section-label">Published outputs</p>
+      <h2>Browse by theme</h2>
+      <p class="measure">FACT's first published outputs appear in the 2026 <em>Canadian Tax Journal</em>. Filter by research theme; more formats — policy briefs, explainers, and data tools — will appear here as they are released.</p>
 
-      <div class="out-list">
+      <div class="out-filters" role="tablist" aria-label="Filter outputs by theme">
+        <button class="out-filter active" data-theme="all" aria-pressed="true">All</button>
+        <button class="out-filter" data-theme="1" aria-pressed="false">Theme 1</button>
+        <button class="out-filter" data-theme="2" aria-pressed="false">Theme 2</button>
+        <button class="out-filter" data-theme="3" aria-pressed="false">Theme 3</button>
+      </div>
+<div class="out-list">
 
-        <article class="out-card">
+        <article class="out-card" data-theme="2">
           <div class="out-venue">Canadian Tax Journal · 2026 · 74(2) · 383&ndash;400</div>
           <span class="out-pill">Theme 2 · Redistribution and Public Value</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.arshad" target="_blank" rel="noopener">Beyond Cost and Yield: The MVPF-TaxAdmin Framework for Evaluating Tax Administration Reforms Through Public Value, Equity, and Welfare</a></h3>
@@ -365,7 +377,7 @@ footer a{color:var(--on-dark);}
           </div>
         </article>
 
-        <article class="out-card">
+        <article class="out-card" data-theme="3">
           <div class="out-venue">Canadian Tax Journal · 2026 · 74(2) · 401&ndash;418</div>
           <span class="out-pill">Theme 3 · Administrative Equity and Access</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.petit" target="_blank" rel="noopener">Tax Filing as State Administrative Infrastructure: Governance Gaps in Canada's Tax-Based Benefit System</a></h3>
@@ -376,7 +388,7 @@ footer a{color:var(--on-dark);}
           </div>
         </article>
 
-        <article class="out-card">
+        <article class="out-card" data-theme="3">
           <div class="out-venue">Canadian Tax Journal · 2026 · 74(2) · 471&ndash;490</div>
           <span class="out-pill">Theme 3 · Administrative Equity and Access</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.sym.robson" target="_blank" rel="noopener">Built for Purpose: A Permanent Public Tax Policy Advisory Body</a></h3>
@@ -388,6 +400,7 @@ footer a{color:var(--on-dark);}
         </article>
 
       </div>
+      <p class="out-empty" hidden>No published outputs in this theme yet — check back soon.</p>
     </div>
   </section>
 
@@ -421,5 +434,26 @@ footer a{color:var(--on-dark);}
   </div>
 </footer>
 
+<script>
+(function(){
+  var filters=document.querySelectorAll('.out-filter');
+  var cards=document.querySelectorAll('.out-card');
+  var empty=document.querySelector('.out-empty');
+  filters.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var t=btn.getAttribute('data-theme');
+      filters.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+      btn.classList.add('active');btn.setAttribute('aria-pressed','true');
+      var shown=0;
+      cards.forEach(function(c){
+        var match=(t==='all'||c.getAttribute('data-theme')===t);
+        c.style.display=match?'':'none';
+        if(match)shown++;
+      });
+      if(empty)empty.hidden=(shown>0);
+    });
+  });
+})();
+</script>
 </body>
 </html>
