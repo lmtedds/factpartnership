@@ -153,17 +153,25 @@ hr.rule{border:0;border-top:1px solid var(--border);margin:0;}
 
 /* Themes */
 .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;}
-.theme{background:var(--card);border:1px solid var(--border);padding:26px 24px 28px;}
+.theme{background:var(--card);border:1px solid var(--border);padding:0 0 28px;overflow:hidden;transition:border-color .18s ease,transform .18s ease;}
+.theme:hover{border-color:var(--bronze);transform:translateY(-3px);}
+.theme-motif{display:block;width:100%;height:96px;background:var(--ink);}
+.theme-inner{padding:24px 24px 0;}
 .theme .num{font-size:12px;letter-spacing:0.16em;color:var(--bronze-dark);font-weight:600;display:block;margin-bottom:12px;}
 .theme h3{font-size:1.1rem;margin-bottom:10px;}
 .theme p{font-size:0.95rem;color:var(--ink-soft);}
 .theme .lead{font-size:0.85rem;color:var(--muted);margin:0;padding-top:14px;border-top:1px solid var(--border);}
+.motif-line{stroke:#fff;fill:none;stroke-width:2;}
+.motif-accent{stroke:var(--bronze);}
+.motif-fill{fill:rgba(255,255,255,.08);}
 
 /* Outputs */
 .output{padding:24px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:150px 1fr;gap:24px;}
 .output:last-of-type{border-bottom:1px solid var(--border);}
 .output .meta{font-size:0.85rem;color:var(--muted);letter-spacing:0.03em;}
 .output h3{font-size:1.02rem;font-weight:500;line-height:1.4;margin-bottom:6px;}
+.output h3 a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .15s ease;}
+.output h3 a:hover{border-bottom-color:var(--bronze);}
 .output .authors{font-size:0.9rem;color:var(--muted);margin:0;}
 
 /* People */
@@ -176,6 +184,12 @@ hr.rule{border:0;border-top:1px solid var(--border);margin:0;}
 .partners{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:32px;}
 .partner{background:var(--card);border:1px solid var(--border);padding:26px 26px 28px;}
 .partner .kind{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--bronze-dark);font-weight:600;display:block;margin-bottom:10px;}
+.partner{padding:0;overflow:hidden;}
+.partner-logo{display:flex;align-items:center;justify-content:center;background:var(--ink);padding:30px 26px;min-height:92px;}
+.partner-logo svg{width:auto;max-width:78%;max-height:44px;}
+.partner-logo.cto svg{max-height:60px;max-width:60%;}
+.partner-inner{padding:24px 26px 28px;}
+.partner-logo-link{display:block;}
 .partner h3{font-size:1.05rem;margin-bottom:8px;}
 .partner p{font-size:0.93rem;color:var(--ink-soft);margin-bottom:12px;}
 .partner a{font-size:0.9rem;}
@@ -296,11 +310,11 @@ footer a{color:var(--on-dark);}
     </a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="research.html">Research</a></li>
+        <li><a href="research.html">Research Themes</a></li>
         <li><a href="#outputs">Outputs</a></li>
         <li><a href="announcements.html">Announcements</a></li>
-        <li><a href="#people">People</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="partner.html">Partner with Us</a></li>
       </ul>
     </nav>
   </div>
@@ -310,7 +324,7 @@ footer a{color:var(--on-dark);}
 
   <div class="hero" id="top">
     <div class="wrap">
-      <p class="eyebrow">SSHRC Partnership Development Grant</p>
+      <p class="eyebrow">A national research partnership</p>
       <h1>Evidence for a fairer Canadian tax system</h1>
       <p class="lede">Independent research on the tax mix, redistribution, and administrative equity — measuring who pays, and who benefits.</p>
       <a class="btn" href="research.html">Explore the research</a>
@@ -320,12 +334,12 @@ footer a{color:var(--on-dark);}
   <div class="wrap">
     <div class="card-row">
       <a class="card" href="research.html">
-        <h3>Three research themes</h3>
-        <p>Progressivity · redistribution · administrative equity</p>
+        <h3>Research Themes</h3>
+        <p>Tax Mix &amp; Progressivity · Redistribution &amp; Public Value · Administrative Equity &amp; Access</p>
       </a>
       <a class="card" href="#outputs">
         <h3>Latest output</h3>
-        <p>Canadian Tax Journal — forthcoming, 2026</p>
+        <p>Three articles in Canadian Tax Journal 74(2), 2026</p>
       </a>
     </div>
   </div>
@@ -334,9 +348,9 @@ footer a{color:var(--on-dark);}
     <div class="wrap measure">
       <p class="section-label">About the partnership</p>
       <h2>Canada has no shared infrastructure for evaluating tax fairness. FACT is building one.</h2>
-      <p>Canada's tax and transfer system is complex, fragmented, and hard to see into. That opacity makes it difficult to answer basic questions — how the burden is distributed, what public spending actually returns, and who is shut out by the way benefits are administered. Perceptions of unfairness follow, and trust in a cornerstone democratic institution erodes.</p>
-      <p>The Fair and Accountable Canadian Taxation (FACT) Partnership brings together researchers at the University of Calgary, Carleton University, and the Université de Sherbrooke with two national organizations — Social Capital Partners and the Canadian Tax Observatory — to build a durable, open platform for analyzing tax fairness in Canada. An equity, diversity, inclusion, and accessibility lens runs across all three research themes, and the partnership trains the next generation of applied public-finance researchers.</p>
-      <p>FACT's research is academic-led and independent. Findings are published openly and mobilized in both official languages.</p>
+      <p>The Fair and Accountable Canadian Taxation (FACT) Partnership unites scholars, practitioners, and policy intermediaries to reform Canada's tax and transfer systems in ways that strengthen fairness, accountability, and trust in government. Fair taxation is foundational to economic justice and to the legitimacy democratic governance depends on.</p>
+      <p>Yet Canada's tax system is complex, fragmented, and difficult to access — hindering redistribution and fostering perceptions of unfairness. FACT develops a coordinated, evidence-based framework for assessing how Canada's tax system raises, allocates, and administers public funds, and how reforms can improve both equity and efficiency.</p>
+      <p>The partnership brings together researchers at the University of Calgary, Carleton University, and the Université de Sherbrooke with two national organizations — Social Capital Partners and the Canadian Tax Observatory. An equity, diversity, inclusion, and accessibility lens runs across all three research themes, and the partnership trains the next generation of applied public-finance researchers. FACT's research is academic-led and independent; findings are published openly and mobilized in both official languages.</p>
     </div>
   </section>
 
@@ -350,22 +364,58 @@ footer a{color:var(--on-dark);}
 
       <div class="themes">
         <article class="theme">
-          <span class="num">Theme 1</span>
-          <h3>Tax mix, progressivity and fairness</h3>
-          <p>The first integrated, multi-jurisdictional picture of how Canada's cumulative tax burden — federal, provincial, and municipal — is distributed, and where regressivity is embedded in the architecture.</p>
-          <p class="lead"><a href="research.html#theme-1">Lead: Lindsay M. Tedds &rarr;</a></p>
+          <svg class="theme-motif" viewBox="0 0 260 96" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rising distribution bars with a progressivity curve">
+            <rect x="30" y="64" width="14" height="20" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="58" y="56" width="14" height="28" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="86" y="46" width="14" height="38" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="114" y="40" width="14" height="44" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="142" y="30" width="14" height="54" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="170" y="24" width="14" height="60" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <rect x="198" y="18" width="14" height="66" class="motif-fill" stroke="#6b4526" stroke-width="1"/>
+            <path d="M30 70 Q120 62 220 20" class="motif-line motif-accent" stroke-width="2.2"/>
+            <circle cx="220" cy="20" r="3.5" fill="#6b4526"/>
+          </svg>
+          <div class="theme-inner">
+            <span class="num">Theme 1</span>
+            <h3>Tax Mix, Progressivity and Fairness</h3>
+            <p>The first integrated, multi-jurisdictional picture of how Canada's cumulative tax burden — federal, provincial, and municipal — is distributed, and where regressivity is embedded in the architecture.</p>
+            <p class="lead"><a href="research.html#theme-1">Read more &rarr;</a></p>
+          </div>
         </article>
         <article class="theme">
-          <span class="num">Theme 2</span>
-          <h3>Redistribution and public value</h3>
-          <p>Systematic Canadian application of the Marginal Value of Public Funds framework, estimating the net social return to transfers, credits, and public spending rather than their cost alone.</p>
-          <p class="lead"><a href="research.html#theme-2">Lead: Antoine Genest-Grégoire &rarr;</a></p>
+          <svg class="theme-motif" viewBox="0 0 260 96" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Value flowing between two poles and returning">
+            <circle cx="46" cy="48" r="12" class="motif-fill" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="214" cy="48" r="12" class="motif-fill" stroke="#fff" stroke-width="1.5"/>
+            <path d="M60 40 Q130 8 200 40" class="motif-line motif-accent" stroke-width="2.2"/>
+            <path d="M200 56 Q130 88 60 56" class="motif-line" stroke-width="2" opacity="0.55"/>
+            <polygon points="200,36 208,40 200,44" fill="#6b4526"/>
+            <polygon points="60,52 52,56 60,60" fill="#fff" opacity="0.55"/>
+          </svg>
+          <div class="theme-inner">
+            <span class="num">Theme 2</span>
+            <h3>Redistribution and Public Value</h3>
+            <p>Systematic Canadian application of the Marginal Value of Public Funds framework, estimating the net social return to transfers, credits, and public spending rather than their cost alone.</p>
+            <p class="lead"><a href="research.html#theme-2">Read more &rarr;</a></p>
+          </div>
         </article>
         <article class="theme">
-          <span class="num">Theme 3</span>
-          <h3>Administrative equity and access</h3>
-          <p>Who is excluded by how the system runs: barriers to filing, uneven audit and compliance burdens, and reforms — including automatic filing — that widen access to the benefits people are already owed.</p>
-          <p class="lead"><a href="research.html#theme-3">Lead: Jennifer Robson &rarr;</a></p>
+          <svg class="theme-motif" viewBox="0 0 260 96" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A gateway where some paths pass through and one is blocked">
+            <line x1="92" y1="20" x2="92" y2="84" class="motif-line" stroke-width="2"/>
+            <line x1="168" y1="20" x2="168" y2="84" class="motif-line" stroke-width="2"/>
+            <path d="M20 40 L88 40" class="motif-line motif-accent" stroke-width="2.2"/>
+            <polygon points="88,36 96,40 88,44" fill="#6b4526"/>
+            <path d="M172 40 L240 40" class="motif-line motif-accent" stroke-width="2.2"/>
+            <polygon points="240,36 248,40 240,44" fill="#6b4526"/>
+            <path d="M20 64 L84 64" class="motif-line" stroke-width="2" opacity="0.4" stroke-dasharray="4 4"/>
+            <line x1="86" y1="60" x2="98" y2="68" class="motif-line" stroke-width="1.6" opacity="0.5"/>
+            <line x1="98" y1="60" x2="86" y2="68" class="motif-line" stroke-width="1.6" opacity="0.5"/>
+          </svg>
+          <div class="theme-inner">
+            <span class="num">Theme 3</span>
+            <h3>Administrative Equity and Access</h3>
+            <p>Who is excluded by how the system runs: barriers to filing, uneven audit and compliance burdens, and reforms — including automatic filing — that widen access to the benefits people are already owed.</p>
+            <p class="lead"><a href="research.html#theme-3">Read more &rarr;</a></p>
+          </div>
         </article>
       </div>
     </div>
@@ -376,22 +426,29 @@ footer a{color:var(--on-dark);}
   <section id="outputs">
     <div class="wrap">
       <p class="section-label">Outputs</p>
-      <h2>Published and forthcoming</h2>
+      <h2>Published research</h2>
       <p class="measure">Peer-reviewed research, plain-language companion pieces, and policy briefs. Outputs are listed here as they are released.</p>
 
       <div style="margin-top:34px">
         <article class="output">
-          <div class="meta">Canadian Tax Journal<br>Forthcoming, 2026</div>
+          <div class="meta">Canadian Tax Journal<br>2026 · 74(2) · 383&ndash;400</div>
           <div>
-            <h3>Beyond Cost and Yield: An MVPF-TAdmin Framework for Evaluating Tax Administration Reforms Through Public Value, Equity, and Welfare</h3>
+            <h3><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.arshad" target="_blank" rel="noopener">Beyond Cost and Yield: The MVPF-TaxAdmin Framework for Evaluating Tax Administration Reforms Through Public Value, Equity, and Welfare</a></h3>
             <p class="authors">Selvia Arshad, Gillian Petit, Lindsay M. Tedds</p>
           </div>
         </article>
         <article class="output">
-          <div class="meta">Canadian Tax Journal<br>Forthcoming, 2026</div>
+          <div class="meta">Canadian Tax Journal<br>2026 · 74(2) · 401&ndash;418</div>
           <div>
-            <h3>Tax Filing as State Administrative Infrastructure: Governance Gaps in Canada's Tax-Based Benefit System</h3>
+            <h3><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.petit" target="_blank" rel="noopener">Tax Filing as State Administrative Infrastructure: Governance Gaps in Canada's Tax-Based Benefit System</a></h3>
             <p class="authors">Gillian Petit, Lindsay M. Tedds, Jennifer Robson</p>
+          </div>
+        </article>
+        <article class="output">
+          <div class="meta">Canadian Tax Journal<br>2026 · 74(2) · 471&ndash;490</div>
+          <div>
+            <h3><a href="https://doi.org/10.32721/ctj.2026.74.2.sym.robson" target="_blank" rel="noopener">Built for Purpose: A Permanent Public Tax Policy Advisory Body</a></h3>
+            <p class="authors">Jennifer Robson, Yves Giroux</p>
           </div>
         </article>
       </div>
@@ -407,22 +464,22 @@ footer a{color:var(--on-dark);}
       <div class="people">
         <div class="person">
           <div class="name">Lindsay M. Tedds</div>
-          <div class="role">Project Director · University of Calgary · Theme 1 lead</div>
+          <div class="role">Project Director · University of Calgary</div>
         </div>
         <div class="person">
           <div class="name">Jennifer Robson</div>
-          <div class="role">Co-Director · Carleton University · Theme 3 lead</div>
+          <div class="role">Co-Director · Carleton University</div>
         </div>
         <div class="person">
           <div class="name">Antoine Genest-Grégoire</div>
-          <div class="role">Co-Director · Université de Sherbrooke · Theme 2 lead</div>
+          <div class="role">Co-Director · Université de Sherbrooke</div>
         </div>
         <div class="person">
           <div class="name">Gillian Petit</div>
           <div class="role">Research Manager · University of Calgary</div>
         </div>
       </div>
-      <p class="affil">FACT is governed by a Joint Governance Committee of the academic directors and the chief executives of its organizational partners, advised by an external group of policymakers, civil-society leaders, and international experts.</p>
+      <p class="affil"><a href="people.html">Meet the full team &rarr;</a></p>
     </div>
   </section>
 
@@ -436,20 +493,178 @@ footer a{color:var(--on-dark);}
 
       <div class="partners">
         <article class="partner">
-          <span class="kind">Organizational partner</span>
-          <h3>Social Capital Partners</h3>
-          <p>A philanthropic policy intermediary advancing more inclusive economic systems. SCP co-leads policy dialogues and roundtables, and translates research into workable reform options across government, business, and philanthropy.</p>
-          <a href="https://socialcapitalpartners.ca/" target="_blank" rel="noopener">socialcapitalpartners.ca ↗</a>
+          <a class="partner-logo-link" href="https://socialcapitalpartners.ca/" target="_blank" rel="noopener" aria-label="Social Capital Partners website">
+            <div class="partner-logo scp"><svg role="img" aria-label="Social Capital Partners" id="scp-Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 899.2 357.5">
+  
+  <defs>
+    <style>
+      .scp-st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="scp-st0" d="M456.1,94.9c-6.7,0-12.4-1-17.3-3.1-4.9-2.1-8.7-5.1-11.5-9-2.8-3.9-4.3-8.6-4.6-13.9h13.5c.3,3.2,1.3,5.9,3.1,8.1,1.8,2.1,4.2,3.7,7.1,4.8,2.9,1,6.1,1.6,9.6,1.6s7.2-.6,10.2-1.8c3-1.2,5.3-2.9,7-5.1,1.7-2.2,2.5-4.7,2.5-7.6s-.7-4.8-2.2-6.5-3.5-3.1-6.1-4.2c-2.6-1.1-5.4-2.1-8.6-2.9l-10.5-2.9c-7.2-1.9-12.9-4.8-17-8.6-4.2-3.8-6.2-8.8-6.2-15s1.4-9.6,4.2-13.5c2.8-3.8,6.5-6.8,11.3-8.9,4.8-2.1,10.1-3.2,16.1-3.2s11.4,1.1,16,3.2c4.6,2.1,8.3,5,11,8.7,2.7,3.7,4.1,7.9,4.2,12.7h-13c-.5-4.1-2.4-7.3-5.7-9.6-3.3-2.3-7.6-3.4-12.7-3.4s-6.7.6-9.4,1.7c-2.7,1.1-4.8,2.7-6.2,4.7-1.5,2-2.2,4.3-2.2,6.9s.9,5.1,2.6,6.8c1.7,1.8,3.9,3.1,6.3,4.2,2.5,1,4.9,1.8,7.2,2.5l8.7,2.3c2.8.7,5.7,1.7,8.7,2.9s5.8,2.8,8.4,4.7c2.6,1.9,4.6,4.3,6.2,7.2,1.6,2.9,2.4,6.3,2.4,10.3s-1.3,9.4-3.9,13.4c-2.6,3.9-6.3,7-11.3,9.3-4.9,2.3-10.9,3.4-17.8,3.4Z"/>
+    <path class="scp-st0" d="M529.5,94.9c-6.3,0-11.7-1.4-16.4-4.3-4.7-2.9-8.3-6.9-10.9-12.1-2.6-5.2-3.9-11.2-3.9-18.1s1.3-13,3.9-18.2c2.6-5.2,6.2-9.2,10.9-12.1,4.7-2.9,10.2-4.3,16.4-4.3s11.8,1.4,16.5,4.3c4.7,2.9,8.3,6.9,10.9,12.1,2.6,5.2,3.9,11.3,3.9,18.2s-1.3,12.9-3.9,18.1c-2.6,5.2-6.2,9.2-10.9,12.1-4.7,2.9-10.2,4.3-16.5,4.3ZM529.5,83.9c4.1,0,7.5-1.1,10.2-3.2,2.7-2.2,4.7-5,6-8.6,1.3-3.6,1.9-7.5,1.9-11.7s-.6-8.3-1.9-11.9c-1.3-3.6-3.3-6.5-6-8.6-2.7-2.2-6.1-3.2-10.2-3.2s-7.4,1.1-10.1,3.2c-2.7,2.2-4.6,5-6,8.6-1.3,3.6-2,7.5-2,11.9s.7,8.1,2,11.7c1.3,3.6,3.3,6.4,6,8.6,2.7,2.2,6,3.2,10.1,3.2Z"/>
+    <path class="scp-st0" d="M600.6,94.9c-6.4,0-12-1.5-16.6-4.4-4.7-3-8.3-7-10.8-12.2-2.5-5.2-3.8-11.1-3.8-17.8s1.3-12.8,3.9-18c2.6-5.2,6.2-9.3,10.8-12.2,4.6-2.9,10.1-4.4,16.4-4.4s9.6.9,13.6,2.8c4,1.9,7.2,4.5,9.6,7.9,2.5,3.4,3.9,7.3,4.3,11.9h-12.7c-.4-2.1-1.3-4.1-2.5-5.8-1.3-1.8-2.9-3.2-4.9-4.2-2-1-4.5-1.6-7.2-1.6s-6.8.9-9.5,2.8c-2.7,1.9-4.8,4.6-6.3,8.1-1.5,3.5-2.3,7.7-2.3,12.5s.7,9,2.2,12.6c1.5,3.6,3.6,6.4,6.3,8.3,2.7,1.9,5.9,2.9,9.5,2.9s7-1,9.6-3.1c2.7-2.1,4.4-4.9,5.1-8.5h12.7c-.4,4.4-1.8,8.2-4.2,11.6-2.4,3.4-5.5,6.1-9.5,8-4,2-8.6,2.9-13.8,2.9Z"/>
+    <path class="scp-st0" d="M646.3,16.3c-2.3,0-4.2-.8-5.8-2.3-1.6-1.5-2.4-3.3-2.4-5.4s.8-4,2.4-5.5c1.6-1.5,3.5-2.3,5.8-2.3s4.2.8,5.8,2.3c1.6,1.5,2.4,3.4,2.4,5.5s-.8,3.9-2.4,5.4c-1.6,1.5-3.5,2.3-5.8,2.3ZM639.7,93.5V26.6h12.9v66.9h-12.9Z"/>
+    <path class="scp-st0" d="M687,94.9c-4.2,0-8.1-.8-11.5-2.4-3.4-1.6-6.1-3.9-8.1-6.9-2-3-3-6.7-3-11.1s.7-6.9,2.2-9.3c1.5-2.4,3.4-4.3,5.9-5.8,2.5-1.4,5.2-2.5,8.3-3.2,3-.7,6.1-1.3,9.3-1.7,4-.4,7.3-.8,9.8-1.1,2.5-.3,4.3-.8,5.4-1.5,1.1-.7,1.7-1.8,1.7-3.4v-.3c0-3.8-1.1-6.7-3.2-8.8-2.1-2.1-5.3-3.1-9.5-3.1s-7.8.9-10.3,2.8c-2.5,1.9-4.3,4-5.2,6.4l-12.3-2.8c1.5-4.1,3.6-7.4,6.4-9.8,2.8-2.5,6-4.3,9.7-5.5,3.7-1.2,7.5-1.7,11.5-1.7s5.5.3,8.5.9c3,.6,5.8,1.8,8.5,3.4,2.7,1.7,4.8,4,6.5,7.1,1.7,3.1,2.5,7,2.5,11.9v44.4h-12.8v-9.2h-.5c-.8,1.6-2,3.3-3.7,4.9-1.7,1.6-3.9,3-6.5,4.1-2.6,1.1-5.8,1.6-9.5,1.6ZM689.8,84.5c3.6,0,6.7-.7,9.3-2.1,2.6-1.4,4.5-3.3,5.9-5.6,1.4-2.3,2-4.8,2-7.4v-8.7c-.5.4-1.4.9-2.7,1.3-1.3.4-2.8.7-4.5,1-1.7.3-3.3.5-4.9.7-1.6.2-2.9.4-4,.5-2.5.4-4.8.9-6.9,1.6-2.1.7-3.7,1.8-5,3.2-1.3,1.4-1.9,3.3-1.9,5.6s1.2,5.7,3.6,7.3c2.4,1.6,5.4,2.5,9.1,2.5Z"/>
+    <path class="scp-st0" d="M747.8,4.3v89.2h-12.9V4.3h12.9Z"/>
+    <path class="scp-st0" d="M463.5,210.9c-7.7,0-14.5-1.8-20.6-5.5-6.1-3.7-10.8-8.9-14.3-15.8-3.5-6.8-5.2-15-5.2-24.5s1.7-17.7,5.2-24.6c3.5-6.8,8.3-12.1,14.3-15.8,6-3.7,12.9-5.5,20.6-5.5s9.1.7,13.3,2c4.1,1.4,7.8,3.3,11.1,5.9,3.3,2.6,6,5.8,8.1,9.5,2.1,3.8,3.6,8,4.3,12.8h-13.5c-.5-2.9-1.5-5.5-2.9-7.7-1.4-2.2-3.2-4.1-5.2-5.6-2.1-1.5-4.4-2.7-6.9-3.5-2.5-.8-5.2-1.2-8.1-1.2-5.1,0-9.7,1.3-13.8,3.9-4.1,2.6-7.3,6.4-9.6,11.4-2.3,5-3.5,11.1-3.5,18.3s1.2,13.4,3.5,18.3c2.4,5,5.6,8.7,9.6,11.3,4.1,2.6,8.6,3.8,13.7,3.8s5.5-.4,8-1.1c2.5-.8,4.8-1.9,6.9-3.4,2.1-1.5,3.8-3.4,5.2-5.5,1.4-2.2,2.4-4.7,3-7.6h13.5c-.7,4.4-2.1,8.5-4.1,12.1-2.1,3.7-4.7,6.8-8,9.5-3.2,2.7-6.9,4.7-11.1,6.2-4.2,1.5-8.7,2.2-13.6,2.2Z"/>
+    <path class="scp-st0" d="M532.2,211.1c-4.2,0-8.1-.8-11.5-2.4-3.4-1.6-6.1-3.9-8.1-6.9-2-3-3-6.7-3-11.1s.7-6.9,2.2-9.3c1.5-2.4,3.4-4.3,5.9-5.8,2.5-1.4,5.2-2.5,8.3-3.2,3-.7,6.1-1.3,9.3-1.7,4-.4,7.3-.8,9.8-1.1,2.5-.3,4.3-.8,5.4-1.5,1.1-.7,1.7-1.8,1.7-3.4v-.3c0-3.8-1.1-6.7-3.2-8.8-2.1-2.1-5.3-3.1-9.5-3.1s-7.8.9-10.3,2.8c-2.5,1.9-4.3,4-5.2,6.4l-12.3-2.8c1.5-4.1,3.6-7.4,6.4-9.8,2.8-2.5,6-4.3,9.7-5.5,3.7-1.2,7.5-1.7,11.5-1.7s5.5.3,8.5.9c3,.6,5.8,1.8,8.5,3.4,2.7,1.7,4.8,4,6.5,7.1,1.7,3.1,2.5,7,2.5,11.9v44.4h-12.8v-9.2h-.5c-.8,1.6-2,3.3-3.7,4.9-1.7,1.6-3.9,3-6.5,4.1-2.6,1.1-5.8,1.6-9.5,1.6ZM535,200.7c3.6,0,6.7-.7,9.3-2.1,2.6-1.4,4.5-3.3,5.9-5.6,1.4-2.3,2-4.8,2-7.4v-8.7c-.5.4-1.4.9-2.7,1.3-1.3.4-2.8.7-4.5,1-1.7.3-3.3.5-4.9.7-1.6.2-2.9.4-4,.5-2.5.4-4.8.9-6.9,1.6-2.1.7-3.7,1.8-5,3.2-1.3,1.4-1.9,3.3-1.9,5.6s1.2,5.7,3.6,7.3c2.4,1.6,5.4,2.5,9.1,2.5Z"/>
+    <path class="scp-st0" d="M580.1,234.7v-91.9h12.6v10.9h1.1c.8-1.4,1.9-3,3.3-4.8,1.4-1.8,3.4-3.4,6-4.8,2.6-1.4,5.9-2.1,10-2.1s10.2,1.4,14.4,4.1c4.2,2.7,7.5,6.6,10,11.8,2.4,5.1,3.7,11.4,3.7,18.6s-1.2,13.4-3.6,18.5c-2.4,5.2-5.7,9.1-9.9,11.9-4.2,2.8-9,4.2-14.5,4.2s-7.3-.7-9.9-2.1c-2.6-1.4-4.6-3-6-4.8-1.5-1.8-2.6-3.5-3.4-4.8h-.7v35.4h-12.9ZM610.2,199.9c3.9,0,7.1-1,9.7-3.1,2.6-2.1,4.6-4.9,5.9-8.5,1.3-3.6,2-7.6,2-12.1s-.7-8.4-2-11.9c-1.3-3.5-3.3-6.3-5.9-8.3-2.6-2-5.8-3.1-9.8-3.1s-7,1-9.6,2.9c-2.6,1.9-4.6,4.6-5.9,8.1-1.3,3.5-2,7.6-2,12.2s.7,8.8,2,12.3c1.4,3.6,3.3,6.3,6,8.3,2.6,2,5.8,3,9.5,3Z"/>
+    <path class="scp-st0" d="M659.4,132.5c-2.3,0-4.2-.8-5.8-2.3-1.6-1.5-2.4-3.3-2.4-5.4s.8-4,2.4-5.5c1.6-1.5,3.5-2.3,5.8-2.3s4.2.8,5.8,2.3c1.6,1.5,2.4,3.4,2.4,5.5s-.8,3.9-2.4,5.4c-1.6,1.5-3.5,2.3-5.8,2.3ZM652.8,209.7v-66.9h12.9v66.9h-12.9Z"/>
+    <path class="scp-st0" d="M711.8,142.8v10.5h-36.5v-10.5h36.5ZM685,126.8h13v63.2c0,3.1.6,5.3,1.9,6.7,1.3,1.4,3.3,2.1,6.2,2.1s1.4,0,2.2-.1c.8,0,1.6-.2,2.4-.4l2.5,10.8c-1.3.4-2.8.8-4.3,1-1.6.2-3.1.4-4.7.4-5.8,0-10.4-1.6-13.9-4.9-3.5-3.3-5.2-7.6-5.2-13v-65.8Z"/>
+    <path class="scp-st0" d="M742.9,211.1c-4.2,0-8.1-.8-11.5-2.4-3.4-1.6-6.1-3.9-8.1-6.9-2-3-3-6.7-3-11.1s.7-6.9,2.2-9.3c1.5-2.4,3.4-4.3,5.9-5.8,2.5-1.4,5.2-2.5,8.3-3.2,3-.7,6.1-1.3,9.3-1.7,4-.4,7.3-.8,9.8-1.1,2.5-.3,4.3-.8,5.4-1.5,1.1-.7,1.7-1.8,1.7-3.4v-.3c0-3.8-1.1-6.7-3.2-8.8-2.1-2.1-5.3-3.1-9.5-3.1s-7.8.9-10.3,2.8c-2.5,1.9-4.3,4-5.2,6.4l-12.3-2.8c1.5-4.1,3.6-7.4,6.4-9.8,2.8-2.5,6-4.3,9.7-5.5,3.7-1.2,7.5-1.7,11.5-1.7s5.5.3,8.5.9c3,.6,5.8,1.8,8.5,3.4,2.7,1.7,4.8,4,6.5,7.1,1.7,3.1,2.5,7,2.5,11.9v44.4h-12.8v-9.2h-.5c-.8,1.6-2,3.3-3.7,4.9-1.7,1.6-3.9,3-6.5,4.1-2.6,1.1-5.8,1.6-9.5,1.6ZM745.7,200.7c3.6,0,6.7-.7,9.3-2.1,2.6-1.4,4.5-3.3,5.9-5.6,1.4-2.3,2-4.8,2-7.4v-8.7c-.5.4-1.4.9-2.7,1.3-1.3.4-2.8.7-4.5,1-1.7.3-3.3.5-4.9.7-1.6.2-2.9.4-4,.5-2.5.4-4.8.9-6.9,1.6-2.1.7-3.7,1.8-5,3.2-1.3,1.4-1.9,3.3-1.9,5.6s1.2,5.7,3.6,7.3c2.4,1.6,5.4,2.5,9.1,2.5Z"/>
+    <path class="scp-st0" d="M803.8,120.5v89.2h-12.9v-89.2h12.9Z"/>
+    <path class="scp-st0" d="M426.3,333.1v-89.2h31.8c6.9,0,12.6,1.3,17.2,3.8,4.5,2.5,8,6,10.2,10.4s3.4,9.3,3.4,14.8-1.1,10.4-3.4,14.8c-2.3,4.4-5.7,7.8-10.3,10.4-4.6,2.5-10.3,3.8-17.3,3.8h-21.8v-11.4h20.5c4.4,0,8-.8,10.7-2.3,2.7-1.5,4.7-3.6,6-6.3,1.3-2.7,1.9-5.7,1.9-9s-.6-6.4-1.9-9c-1.3-2.6-3.3-4.7-6-6.1-2.8-1.5-6.3-2.2-10.8-2.2h-16.9v77.6h-13.5Z"/>
+    <path class="scp-st0" d="M519.7,334.5c-4.2,0-8.1-.8-11.5-2.4-3.4-1.6-6.1-3.9-8.1-6.9-2-3-3-6.7-3-11.1s.7-6.9,2.2-9.3c1.5-2.4,3.4-4.3,5.9-5.8,2.5-1.4,5.2-2.5,8.3-3.2,3-.7,6.1-1.3,9.3-1.7,4-.4,7.3-.8,9.8-1.1,2.5-.3,4.3-.8,5.4-1.5,1.1-.7,1.7-1.8,1.7-3.4v-.3c0-3.8-1.1-6.7-3.2-8.8-2.1-2.1-5.3-3.1-9.5-3.1s-7.8.9-10.3,2.8c-2.5,1.9-4.3,4-5.2,6.4l-12.3-2.8c1.5-4.1,3.6-7.4,6.4-9.8,2.8-2.5,6-4.3,9.7-5.5,3.7-1.2,7.5-1.7,11.5-1.7s5.5.3,8.5.9c3,.6,5.8,1.8,8.5,3.4,2.7,1.7,4.8,4,6.5,7.1,1.7,3.1,2.5,7,2.5,11.9v44.4h-12.8v-9.2h-.5c-.8,1.6-2,3.3-3.7,4.9-1.7,1.6-3.9,3-6.5,4.1-2.6,1.1-5.8,1.6-9.5,1.6ZM522.5,324.1c3.6,0,6.7-.7,9.3-2.1,2.6-1.4,4.5-3.3,5.9-5.6,1.4-2.3,2-4.8,2-7.4v-8.7c-.5.4-1.4.9-2.7,1.3-1.3.4-2.8.7-4.5,1-1.7.3-3.3.5-4.9.7-1.6.2-2.9.4-4,.5-2.5.4-4.8.9-6.9,1.6-2.1.7-3.7,1.8-5,3.2-1.3,1.4-1.9,3.3-1.9,5.6s1.2,5.7,3.6,7.3c2.4,1.6,5.4,2.5,9.1,2.5Z"/>
+    <path class="scp-st0" d="M567.6,333.1v-66.9h12.5v10.7h.7c1.2-3.6,3.4-6.4,6.5-8.5,3.1-2.1,6.6-3.1,10.5-3.1s1.7,0,2.8,0c1.1,0,2,.1,2.7.2v12.5c-.5-.2-1.4-.3-2.8-.5-1.3-.2-2.7-.2-4-.2-3.1,0-5.8.6-8.2,1.9-2.4,1.3-4.3,3.1-5.7,5.3-1.4,2.3-2.1,4.9-2.1,7.8v40.8h-12.9Z"/>
+    <path class="scp-st0" d="M647,266.2v10.5h-36.5v-10.5h36.5ZM620.2,250.2h13v63.2c0,3.1.6,5.3,1.9,6.7,1.3,1.4,3.3,2.1,6.2,2.1s1.4,0,2.2-.1c.8,0,1.6-.2,2.4-.4l2.5,10.8c-1.3.4-2.8.8-4.3,1-1.6.2-3.1.4-4.7.4-5.8,0-10.4-1.6-13.9-4.9-3.5-3.3-5.2-7.6-5.2-13v-65.8Z"/>
+    <path class="scp-st0" d="M671.6,293.4v39.7h-12.9v-66.9h12.6v11h.9c1.5-3.6,3.9-6.5,7.1-8.7,3.2-2.1,7.4-3.2,12.5-3.2s8.5.9,11.9,2.8c3.4,1.9,6.1,4.7,8,8.5,1.9,3.8,2.8,8.4,2.8,13.9v42.5h-12.9v-40.9c0-4.8-1.3-8.6-3.8-11.4-2.6-2.8-6-4.2-10.4-4.2s-5.7.7-8.1,2c-2.4,1.3-4.2,3.2-5.6,5.7-1.4,2.5-2,5.5-2,9.1Z"/>
+    <path class="scp-st0" d="M758.2,334.5c-6.5,0-12.2-1.4-17-4.3-4.8-2.8-8.5-6.8-11-12-2.6-5.2-3.9-11.2-3.9-18.1s1.3-12.9,3.8-18.1c2.5-5.2,6.1-9.3,10.7-12.2s10-4.4,16.3-4.4,7.5.6,11,1.9c3.6,1.2,6.7,3.2,9.6,5.9,2.8,2.7,5.1,6.1,6.7,10.4,1.7,4.3,2.5,9.4,2.5,15.4v4.7h-53.2v-9.8h46.5l-6,3.2c0-4.1-.6-7.7-1.9-10.9-1.3-3.2-3.2-5.6-5.7-7.4-2.5-1.8-5.7-2.7-9.4-2.7s-7,.9-9.6,2.7c-2.7,1.8-4.7,4.2-6.1,7.1-1.4,3-2.1,6.2-2.1,9.7v6.6c0,4.6.8,8.5,2.4,11.7,1.6,3.2,3.8,5.6,6.7,7.3,2.9,1.7,6.2,2.5,10,2.5s4.7-.4,6.7-1.1c2-.7,3.8-1.8,5.2-3.2,1.5-1.4,2.6-3.2,3.4-5.3l12.3,2.3c-1,3.6-2.8,6.7-5.3,9.5-2.5,2.7-5.7,4.8-9.5,6.3-3.8,1.5-8.2,2.2-13,2.2Z"/>
+    <path class="scp-st0" d="M798.4,333.1v-66.9h12.5v10.7h.7c1.2-3.6,3.4-6.4,6.5-8.5,3.1-2.1,6.6-3.1,10.5-3.1s1.7,0,2.8,0c1.1,0,2,.1,2.7.2v12.5c-.5-.2-1.4-.3-2.8-.5-1.3-.2-2.7-.2-4-.2-3.1,0-5.8.6-8.2,1.9-2.4,1.3-4.3,3.1-5.7,5.3-1.4,2.3-2.1,4.9-2.1,7.8v40.8h-12.9Z"/>
+    <path class="scp-st0" d="M892.9,282.6l-11.8,2c-.8-2.2-2.2-4.3-4.2-6.2-2.1-1.9-5.1-2.8-9.2-2.8s-6.7.8-9.2,2.5c-2.5,1.7-3.7,3.8-3.7,6.3s.8,4.1,2.5,5.4c1.7,1.4,4.3,2.5,7.9,3.4l10.7,2.4c6.1,1.4,10.7,3.6,13.7,6.6,3,3,4.5,6.8,4.5,11.5s-1.2,7.6-3.5,10.7c-2.3,3.1-5.5,5.6-9.6,7.4-4.1,1.8-8.9,2.7-14.2,2.7s-13.6-1.6-18.3-4.8c-4.7-3.2-7.6-7.8-8.7-13.6l12.5-1.9c.8,3.3,2.4,5.7,4.9,7.4,2.5,1.7,5.6,2.5,9.5,2.5s7.6-.9,10.2-2.7c2.6-1.8,3.9-4,3.9-6.5,0-4.2-3.2-7.1-9.5-8.6l-11.3-2.5c-6.3-1.4-10.9-3.7-13.9-6.8-3-3.1-4.5-7-4.5-11.7s1.1-7.4,3.3-10.4c2.2-3,5.3-5.3,9.2-7,3.9-1.7,8.3-2.5,13.3-2.5,7.3,0,13,1.6,17.1,4.7,4.1,3.2,6.9,7.3,8.2,12.5Z"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="267.6" cy="319.9" r="13.4"/>
+    <circle class="scp-st0" cx="318.2" cy="319.9" r="13.4"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="267.6" cy="259.2" r="13.4"/>
+    <circle class="scp-st0" cx="318.2" cy="259.2" r="13.4"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="267.6" cy="198.5" r="13.4"/>
+    <circle class="scp-st0" cx="318.2" cy="198.5" r="13.4"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="267.6" cy="137.9" r="13.4"/>
+    <circle class="scp-st0" cx="318.2" cy="137.9" r="13.4"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="77.2" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="77.2" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="77.2" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="77.2" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="77.2" r="13.4"/>
+  </g>
+  <g>
+    <circle class="scp-st0" cx="14.7" cy="16.5" r="13.4"/>
+    <circle class="scp-st0" cx="65.3" cy="16.5" r="13.4"/>
+    <circle class="scp-st0" cx="115.9" cy="16.5" r="13.4"/>
+    <circle class="scp-st0" cx="166.4" cy="16.5" r="13.4"/>
+    <circle class="scp-st0" cx="217" cy="16.5" r="13.4"/>
+  </g>
+</svg></div>
+          </a>
+          <div class="partner-inner">
+            <span class="kind">Organizational partner</span>
+            <h3>Social Capital Partners</h3>
+            <p>A philanthropic policy intermediary advancing more inclusive economic systems. SCP co-leads policy dialogues and roundtables, and translates research into workable reform options across government, business, and philanthropy.</p>
+            <a href="https://socialcapitalpartners.ca/" target="_blank" rel="noopener">socialcapitalpartners.ca ↗</a>
+          </div>
         </article>
         <article class="partner">
-          <span class="kind">Organizational partner</span>
-          <h3>The Canadian Tax Observatory</h3>
-          <p>An independent non-profit devoted to helping people and policymakers understand the tax system, and part of a global network of tax observatories. The Observatory leads bilingual dissemination, data transparency, and international linkage.</p>
-          <a href="https://canadiantaxobservatory.ca/" target="_blank" rel="noopener">canadiantaxobservatory.ca ↗</a>
+          <a class="partner-logo-link" href="https://canadiantaxobservatory.ca/" target="_blank" rel="noopener" aria-label="The Canadian Tax Observatory website">
+            <div class="partner-logo cto"><svg role="img" aria-label="The Canadian Tax Observatory" id="cto-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1160.9 842.4">
+  
+  <defs>
+    <style>
+      .cto-st0 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4.2px;
+      }
+
+      .cto-st1 {
+        fill: #fff;
+      }
+
+      .cto-st2 {
+        fill: url(#cto-New_Gradient_Swatch_1);
+      }
+    </style>
+    <linearGradient id="cto-New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="341.7" y1="220" x2="819.2" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f71455"/>
+      <stop offset=".1" stop-color="#e22861"/>
+      <stop offset=".4" stop-color="#bb4f78"/>
+      <stop offset=".6" stop-color="#9f6b89"/>
+      <stop offset=".8" stop-color="#8e7c94"/>
+      <stop offset="1" stop-color="#888398"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <g>
+      <polyline class="cto-st0" points="472.6 52.8 383.8 52.8 383.8 132.9"/>
+      <polyline class="cto-st0" points="383.8 356.3 383.8 445.1 472.6 445.1"/>
+    </g>
+    <g>
+      <polyline class="cto-st0" points="688.3 52.8 777.1 52.8 777.1 132.9"/>
+      <polyline class="cto-st0" points="777.1 356.3 777.1 445.1 688.3 445.1"/>
+    </g>
+  </g>
+  <polygon class="cto-st2" points="580.5 428.4 819.2 271.2 788.7 254.7 809.2 172.7 735.3 185.4 722.2 149.6 654.1 213 674.1 76.8 626.9 97.7 580.5 11.7 580.4 11.7 534.1 97.7 486.9 76.8 506.8 213 438.7 149.6 425.6 185.4 351.7 172.7 372.2 254.7 341.7 271.2 580.4 428.4 580.5 428.4"/>
+  <g>
+    <path class="cto-st1" d="M152.8,645.6v-87.3h-31v-10.5h74.4v10.5h-31v87.3h-12.3Z"/>
+    <path class="cto-st1" d="M213.1,645.6v-102.3h12v20.7c0,2.2,0,4.5,0,7.1,0,2.6-.2,5.7-.5,9.5h1.8c2.3-3.9,5.2-6.9,8.9-8.9,3.7-2.1,8.3-3.1,13.7-3.1,8.3,0,14.6,2.4,18.9,7.3,4.3,4.9,6.4,12.1,6.4,21.6v48.2h-12v-45.8c0-7.5-1.5-12.9-4.4-16.3-2.9-3.4-7.7-5.1-14.2-5.1s-11.1,1.7-14.1,5.1-4.5,8.8-4.5,16.3v45.8h-12Z"/>
+    <path class="cto-st1" d="M328.3,647c-11.1,0-19.7-3.4-25.9-10.2-6.2-6.8-9.4-16.5-9.4-29.1s3.1-22.3,9.4-29.1c6.2-6.8,14.9-10.2,25.9-10.2s19,3.1,25,9.4c6,6.3,9,15.3,9,27v4.7h-61.2v-8.5h56.3l-6.7,6v-2.4c0-9.1-1.8-15.7-5.5-20-3.6-4.3-9.3-6.4-16.9-6.4s-13.4,2.1-17,6.4c-3.6,4.3-5.4,10.9-5.4,20v6c0,9.1,1.8,15.8,5.4,20.1,3.6,4.3,9.3,6.4,17,6.4s8.9-.8,11.8-2.3c2.8-1.5,4.8-3.2,6-5.1,1.2-1.9,1.8-3.4,1.8-4.4h0c0-.1,12.3-.1,12.3-.1-2.1,7.1-5.9,12.5-11.3,16.2-5.5,3.7-12.3,5.6-20.6,5.6Z"/>
+    <path class="cto-st1" d="M454.5,647c-13.4,0-23.8-4.3-31.2-12.8-7.4-8.5-11.1-21-11.1-37.6s3.7-29.1,11.1-37.6c7.4-8.5,17.8-12.8,31.2-12.8s20.7,3,27.7,9.1c7,6,11.4,14.8,13,26.4h-12.6v-1.7c0-4.3-1-8.1-2.9-11.6-1.9-3.5-5-6.3-9.1-8.5-4.1-2.2-9.5-3.3-16.1-3.3-10,0-17.4,2.8-22.1,8.4-4.7,5.6-7.1,14.3-7.1,26.2v10.8c0,11.8,2.4,20.5,7.1,26.2,4.7,5.6,12.1,8.4,22.1,8.4s12-1.1,16.1-3.3c4.1-2.2,7.1-5.2,9.1-8.9,1.9-3.7,2.9-7.7,2.9-12v-2h12.8c-1.5,11.9-5.8,21-12.8,27.2-7,6.2-16.4,9.4-28,9.4Z"/>
+    <path class="cto-st1" d="M535.4,647c-7.9,0-14.1-1.8-18.6-5.5-4.4-3.7-6.7-8.9-6.7-15.6s2.4-11.8,7.1-15.6c4.7-3.8,11.5-6.1,20.4-7.1l22.7-2.1v8.4l-19.3,1.8c-6.3.7-11,2-14,4-3,2-4.5,5-4.5,9v.4c0,4.1,1.5,7.2,4.5,9.3,3,2.1,7.3,3.2,13,3.2,13.6,0,20.4-5.9,20.4-17.7v-22c0-6.6-1.4-11.5-4.2-14.5-2.8-3.1-7.3-4.6-13.5-4.6s-7.7.6-10.3,1.9c-2.6,1.3-4.5,2.8-5.7,4.7-1.2,1.8-1.8,3.6-1.8,5.2h0c0,.1-12.3.1-12.3.1,3.5-14.6,13.6-21.8,30.3-21.8s17.1,2.4,22,7.2c5,4.8,7.4,11.9,7.4,21.3v48.6h-10.9v-11.3h-1.8c-2.3,4.2-5.4,7.3-9.3,9.5-3.9,2.2-8.9,3.3-15,3.3Z"/>
+    <path class="cto-st1" d="M595.9,645.6v-75.7h10.9v11.5h2c2.3-4.3,5.3-7.5,9.1-9.6,3.8-2.2,8.5-3.3,14-3.3,8.3,0,14.6,2.4,18.9,7.3,4.3,4.9,6.4,12.1,6.4,21.6v48.2h-12v-45.8c0-7.5-1.5-12.9-4.4-16.3-2.9-3.4-7.7-5.1-14.2-5.1s-11.1,1.7-14.1,5.1-4.5,8.8-4.5,16.3v45.8h-12Z"/>
+    <path class="cto-st1" d="M700.8,647c-7.9,0-14.1-1.8-18.6-5.5-4.4-3.7-6.7-8.9-6.7-15.6s2.4-11.8,7.1-15.6c4.7-3.8,11.5-6.1,20.4-7.1l22.7-2.1v8.4l-19.3,1.8c-6.3.7-11,2-14,4-3,2-4.5,5-4.5,9v.4c0,4.1,1.5,7.2,4.5,9.3,3,2.1,7.3,3.2,13,3.2,13.6,0,20.4-5.9,20.4-17.7v-22c0-6.6-1.4-11.5-4.2-14.5-2.8-3.1-7.3-4.6-13.5-4.6s-7.7.6-10.3,1.9c-2.6,1.3-4.5,2.8-5.7,4.7-1.2,1.8-1.8,3.6-1.8,5.2h0c0,.1-12.3.1-12.3.1,3.5-14.6,13.6-21.8,30.3-21.8s17.1,2.4,22,7.2c5,4.8,7.4,11.9,7.4,21.3v48.6h-10.9v-11.3h-1.8c-2.3,4.2-5.4,7.3-9.3,9.5-3.9,2.2-8.9,3.3-15,3.3Z"/>
+    <path class="cto-st1" d="M787.6,647c-6.4,0-12-1.6-16.6-4.7-4.6-3.1-8.2-7.6-10.7-13.5-2.5-5.9-3.8-12.9-3.8-21.1,0-12.5,2.8-22.1,8.3-29,5.5-6.9,13.1-10.3,22.7-10.3s10.3,1.1,14.3,3.4,7.2,5.6,9.6,9.9h2c-.3-3.8-.4-6.9-.5-9.5,0-2.6,0-4.9,0-7.1v-22h12v102.3h-10.9v-12.9h-2c-2.6,4.6-5.9,8.2-9.9,10.6-4.1,2.5-8.9,3.7-14.6,3.7ZM791.1,637.1c7.5,0,13-2.1,16.5-6.4,3.5-4.3,5.3-10.9,5.3-19.9v-6c0-9-1.8-15.6-5.3-19.9-3.5-4.3-9-6.4-16.5-6.4s-13.1,2.2-16.6,6.4c-3.5,4.3-5.2,10.9-5.2,19.9v6c0,9,1.7,15.6,5.2,19.9,3.5,4.3,9,6.4,16.6,6.4Z"/>
+    <path class="cto-st1" d="M854.2,645.6v-66.5h-12.6v-9.2h24.7v75.7h-12ZM852.6,556.7v-12.2h14.5v12.2h-14.5Z"/>
+    <path class="cto-st1" d="M910.7,647c-7.9,0-14.1-1.8-18.6-5.5-4.4-3.7-6.7-8.9-6.7-15.6s2.4-11.8,7.1-15.6c4.7-3.8,11.5-6.1,20.4-7.1l22.7-2.1v8.4l-19.3,1.8c-6.3.7-11,2-14,4-3,2-4.5,5-4.5,9v.4c0,4.1,1.5,7.2,4.5,9.3,3,2.1,7.3,3.2,13,3.2,13.6,0,20.4-5.9,20.4-17.7v-22c0-6.6-1.4-11.5-4.2-14.5-2.8-3.1-7.3-4.6-13.5-4.6s-7.7.6-10.3,1.9c-2.6,1.3-4.5,2.8-5.7,4.7-1.2,1.8-1.8,3.6-1.8,5.2h0c0,.1-12.3.1-12.3.1,3.5-14.6,13.6-21.8,30.3-21.8s17.1,2.4,22,7.2c5,4.8,7.4,11.9,7.4,21.3v48.6h-10.9v-11.3h-1.8c-2.3,4.2-5.4,7.3-9.3,9.5-3.9,2.2-8.9,3.3-15,3.3Z"/>
+    <path class="cto-st1" d="M971.2,645.6v-75.7h10.9v11.5h2c2.3-4.3,5.3-7.5,9.1-9.6,3.8-2.2,8.5-3.3,14-3.3,8.3,0,14.6,2.4,18.9,7.3,4.3,4.9,6.4,12.1,6.4,21.6v48.2h-12v-45.8c0-7.5-1.5-12.9-4.4-16.3-2.9-3.4-7.7-5.1-14.2-5.1s-11.1,1.7-14.1,5.1-4.5,8.8-4.5,16.3v45.8h-12Z"/>
+    <path class="cto-st1" d="M51.1,795.5v-87.3h-31v-10.5h74.4v10.5h-31v87.3h-12.3Z"/>
+    <path class="cto-st1" d="M119.7,796.9c-7.9,0-14.1-1.8-18.6-5.5-4.4-3.7-6.7-8.9-6.7-15.6s2.4-11.8,7.1-15.6c4.7-3.8,11.5-6.1,20.4-7.1l22.7-2.1v8.4l-19.3,1.8c-6.3.7-11,2-14,4-3,2-4.5,5-4.5,9v.4c0,4.1,1.5,7.2,4.5,9.3,3,2.1,7.3,3.2,13,3.2,13.6,0,20.4-5.9,20.4-17.7v-22c0-6.6-1.4-11.5-4.2-14.5-2.8-3.1-7.3-4.6-13.5-4.6s-7.7.6-10.3,1.9c-2.6,1.3-4.5,2.8-5.7,4.7-1.2,1.8-1.8,3.6-1.8,5.2h0c0,.1-12.3.1-12.3.1,3.5-14.6,13.6-21.8,30.3-21.8s17.1,2.4,22,7.2c5,4.8,7.4,11.9,7.4,21.3v48.6h-10.9v-11.3h-1.8c-2.3,4.2-5.4,7.3-9.3,9.5-3.9,2.2-8.9,3.3-15,3.3Z"/>
+    <path class="cto-st1" d="M170.6,795.5l29.5-43.7v7.2c-.1,0-28.3-39.3-28.3-39.3h13.9l20.3,29.6h2l20.3-29.6h13.5l-28.3,39.3v-7.2l29.3,43.7h-14l-21.1-32.2h-2l-21.4,32.2h-13.5Z"/>
+    <path class="cto-st1" d="M331.2,796.9c-13.7,0-24.3-4.3-31.9-12.8-7.6-8.5-11.3-21-11.3-37.6s3.8-29.1,11.3-37.6c7.6-8.5,18.2-12.8,31.9-12.8s24.5,4.3,32,12.8c7.5,8.5,11.3,21,11.3,37.6s-3.8,29.1-11.3,37.6c-7.5,8.5-18.2,12.8-32,12.8ZM331.2,786.5c10.2,0,17.8-2.8,22.7-8.4,4.9-5.6,7.4-14.4,7.4-26.3v-10.5c0-11.9-2.5-20.7-7.4-26.3-4.9-5.6-12.5-8.4-22.7-8.4s-17.9,2.8-22.8,8.4c-4.9,5.6-7.4,14.4-7.4,26.3v10.5c0,11.9,2.5,20.7,7.4,26.3,4.9,5.6,12.5,8.4,22.8,8.4Z"/>
+    <path class="cto-st1" d="M431.9,796.9c-5.6,0-10.4-1.2-14.4-3.7-4-2.5-7.3-6-10-10.6h-2v12.9h-10.9v-102.3h12v22c0,2.2,0,4.5,0,7.1,0,2.6-.2,5.7-.5,9.5h1.8c2.6-4.3,5.8-7.7,9.7-9.9,3.9-2.3,8.7-3.4,14.2-3.4,9.7,0,17.4,3.4,22.9,10.3,5.5,6.9,8.3,16.5,8.3,29s-1.3,15.3-3.8,21.1c-2.5,5.9-6.1,10.3-10.7,13.5-4.6,3.1-10.2,4.7-16.7,4.7ZM428.5,787c7.5,0,13-2.1,16.5-6.4,3.5-4.3,5.3-10.9,5.3-19.9v-6c0-9-1.8-15.6-5.3-19.9-3.5-4.3-9-6.4-16.5-6.4s-13,2.2-16.5,6.4c-3.5,4.3-5.3,10.9-5.3,19.9v6c0,9,1.8,15.6,5.3,19.9,3.5,4.3,9,6.4,16.5,6.4Z"/>
+    <path class="cto-st1" d="M509.7,796.9c-9.1,0-16.2-1.7-21.4-5.2-5.2-3.5-8.7-9-10.5-16.6h12.3c0,1.6.5,3.2,1.6,5.1,1.1,1.9,3,3.5,5.9,4.9,2.8,1.4,6.9,2.1,12,2.1s11-1,14.5-3.1c3.5-2.1,5.3-5.1,5.3-9.1s-1.1-5-3.2-6.6c-2.1-1.6-5.8-2.9-11-3.9l-16.3-3.3c-7.3-1.6-12.6-4-16-7.1-3.4-3.1-5.1-7.4-5.1-12.9s2.7-12.9,8.2-16.9c5.4-4,13.2-6,23.2-6s16,1.7,21.2,5.2c5.1,3.5,8.6,9,10.4,16.6h-12.2c0-1.6-.5-3.2-1.6-5.1-1.1-1.9-3-3.5-5.8-4.9-2.8-1.4-6.8-2.1-12-2.1s-10.8,1-14.1,3.1c-3.4,2.1-5,5.1-5,9.1s1,5,3.1,6.6c2.1,1.6,5.6,2.9,10.5,3.9l16.3,3.3c7.5,1.5,12.9,3.8,16.4,6.9,3.4,3.1,5.2,7.4,5.2,12.9s-2.8,12.9-8.4,16.9c-5.6,4-13.4,6-23.5,6Z"/>
+    <path class="cto-st1" d="M591.3,796.9c-11.1,0-19.7-3.4-25.9-10.2-6.2-6.8-9.4-16.5-9.4-29.1s3.1-22.3,9.4-29.1c6.2-6.8,14.9-10.2,25.9-10.2s19,3.1,25,9.4c6,6.3,9,15.3,9,27v4.7h-61.2v-8.5h56.3l-6.7,6v-2.4c0-9.1-1.8-15.7-5.5-20-3.6-4.3-9.3-6.4-16.9-6.4s-13.4,2.1-17,6.4c-3.6,4.3-5.4,10.9-5.4,20v6c0,9.1,1.8,15.8,5.4,20.1,3.6,4.3,9.3,6.4,17,6.4s8.9-.8,11.8-2.3c2.8-1.5,4.8-3.2,6-5.1,1.2-1.9,1.8-3.4,1.8-4.4h0c0-.1,12.3-.1,12.3-.1-2.1,7.1-5.9,12.5-11.3,16.2-5.5,3.7-12.3,5.6-20.6,5.6Z"/>
+    <path class="cto-st1" d="M644.6,795.5v-75.7h10.9v12h2c2.3-4.2,5.2-7.3,8.8-9.5,3.6-2.2,8.1-3.3,13.6-3.3h14.2v10.6h-18.9c-6.4,0-11.1,1.6-14.1,4.9s-4.5,8.6-4.5,15.9v44.9h-12Z"/>
+    <path class="cto-st1" d="M731.2,795.5l-29.8-75.7h12.5l23.4,60.9h2l23.2-60.9h12l-29.8,75.7h-13.6Z"/>
+    <path class="cto-st1" d="M808,796.9c-7.9,0-14.1-1.8-18.6-5.5-4.4-3.7-6.7-8.9-6.7-15.6s2.4-11.8,7.1-15.6c4.7-3.8,11.5-6.1,20.4-7.1l22.7-2.1v8.4l-19.3,1.8c-6.3.7-11,2-14,4-3,2-4.5,5-4.5,9v.4c0,4.1,1.5,7.2,4.5,9.3,3,2.1,7.3,3.2,13,3.2,13.6,0,20.4-5.9,20.4-17.7v-22c0-6.6-1.4-11.5-4.2-14.5-2.8-3.1-7.3-4.6-13.5-4.6s-7.7.6-10.3,1.9c-2.6,1.3-4.5,2.8-5.7,4.7-1.2,1.8-1.8,3.6-1.8,5.2h0c0,.1-12.3.1-12.3.1,3.5-14.6,13.6-21.8,30.3-21.8s17.1,2.4,22,7.2c5,4.8,7.4,11.9,7.4,21.3v48.6h-10.9v-11.3h-1.8c-2.3,4.2-5.4,7.3-9.3,9.5-3.9,2.2-8.9,3.3-15,3.3Z"/>
+    <path class="cto-st1" d="M858.2,729v-9.2h53.7v9.2h-53.7ZM884,795.5c-5.6,0-8.4-2.8-8.4-8.4v-88.9h12v88h24.2v9.2h-27.9Z"/>
+    <path class="cto-st1" d="M957,796.9c-11.2,0-19.9-3.4-26.2-10.2-6.3-6.8-9.5-16.5-9.5-29.1s3.2-22.3,9.5-29.1c6.3-6.8,15.1-10.2,26.2-10.2s19.9,3.4,26.2,10.2c6.3,6.8,9.4,16.5,9.4,29.1s-3.1,22.3-9.4,29.1c-6.3,6.8-15,10.2-26.2,10.2ZM957,787c7.8,0,13.6-2.1,17.3-6.4,3.7-4.3,5.5-11,5.5-20.1v-5.7c0-9.1-1.8-15.8-5.5-20.1-3.7-4.3-9.5-6.4-17.3-6.4s-13.5,2.2-17.2,6.4c-3.7,4.3-5.6,11-5.6,20.1v5.7c0,9.1,1.9,15.8,5.6,20.1,3.7,4.3,9.5,6.4,17.2,6.4Z"/>
+    <path class="cto-st1" d="M1012.1,795.5v-75.7h10.9v12h2c2.3-4.2,5.2-7.3,8.8-9.5,3.6-2.2,8.1-3.3,13.6-3.3h14.2v10.6h-18.9c-6.4,0-11.1,1.6-14.1,4.9s-4.5,8.6-4.5,15.9v44.9h-12Z"/>
+    <path class="cto-st1" d="M1088.1,818.7l12.2-27.8.7,5.2-31.9-76.4h12.5l23.2,57.7h2l23.4-57.7h12l-41.7,98.9h-12.5Z"/>
+  </g>
+</svg></div>
+          </a>
+          <div class="partner-inner">
+            <span class="kind">Organizational partner</span>
+            <h3>The Canadian Tax Observatory</h3>
+            <p>An independent non-profit devoted to helping people and policymakers understand the tax system, and part of a global network of tax observatories. The Observatory leads bilingual dissemination, data transparency, and international linkage.</p>
+            <a href="https://canadiantaxobservatory.ca/" target="_blank" rel="noopener">canadiantaxobservatory.ca ↗</a>
+          </div>
         </article>
       </div>
 
-      <p class="affil">Academic partners: University of Calgary (host institution) · Carleton University · Université de Sherbrooke</p>
+      <p class="affil">Academic partners: <a href="https://www.ucalgary.ca/" target="_blank" rel="noopener">University of Calgary</a> (host institution) · <a href="https://carleton.ca/" target="_blank" rel="noopener">Carleton University</a> · <a href="https://www.usherbrooke.ca/" target="_blank" rel="noopener">Université de Sherbrooke</a></p>
     </div>
   </section>
 
@@ -477,7 +692,7 @@ footer a{color:var(--on-dark);}
       Department of Economics, University of Calgary
     </div>
     <div>
-      <a href="mailto:info@factpartnership.ca">info@factpartnership.ca</a><br>
+      For more information: <a href="mailto:lindsay.tedds1@ucalgary.ca">lindsay.tedds1@ucalgary.ca</a><br>
       &copy; 2026 FACT Partnership
     </div>
   </div>
