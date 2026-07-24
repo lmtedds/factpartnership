@@ -318,6 +318,12 @@ footer a{color:var(--on-dark);}
 .out-filter:hover{border-color:var(--bronze);}
 .out-filter.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .out-empty{margin-top:30px;color:var(--muted);font-size:0.95rem;}
+
+.out-langtoggle{display:flex;align-items:center;gap:8px;margin:18px 0 2px;}
+.out-langtoggle-label{font-size:0.85rem;color:var(--muted);margin-right:4px;}
+.out-lang{font-size:0.85rem;font-family:inherit;color:var(--ink-soft);background:transparent;border:1px solid var(--border);padding:5px 12px;cursor:pointer;transition:all .15s ease;}
+.out-lang:hover{border-color:var(--bronze);}
+.out-lang.active{background:var(--bronze);color:#fff;border-color:var(--bronze);}
 </style>
 </head>
 <body>
@@ -364,14 +370,21 @@ footer a{color:var(--on-dark);}
         <button class="out-filter" data-theme="2" aria-pressed="false">Theme 2</button>
         <button class="out-filter" data-theme="3" aria-pressed="false">Theme 3</button>
       </div>
-<div class="out-list">
+
+      <div class="out-langtoggle">
+        <span class="out-langtoggle-label">Summaries:</span>
+        <button class="out-lang active" data-lang="en" aria-pressed="true">English</button>
+        <button class="out-lang" data-lang="fr" aria-pressed="false">Français</button>
+      </div>
+
+      <div class="out-list">
 
         <article class="out-card" data-theme="2">
           <div class="out-venue">Canadian Tax Journal · 2026 · 74(2) · 383&ndash;400</div>
           <span class="out-pill">Theme 2 · Redistribution and Public Value</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.arshad" target="_blank" rel="noopener">Beyond Cost and Yield: The MVPF-TaxAdmin Framework for Evaluating Tax Administration Reforms Through Public Value, Equity, and Welfare</a></h3>
           <p class="out-authors">Selvia Arshad, Gillian Petit, Lindsay M. Tedds</p>
-          <p class="out-blurb">Introduces MVPF-TaxAdmin, a welfare-based framework for measuring the social return on every dollar spent administering the tax system — not just its cost and revenue. Applied to automatic tax filing as a case study, it shows how the value of a reform rises once accessibility and legitimacy are weighed alongside efficiency, and how automatic filing can deliver high social returns by improving access for low-income filers.</p>
+          <p class="out-blurb" data-lang="en">Introduces MVPF-TaxAdmin, a welfare-based framework for measuring the social return on every dollar spent administering the tax system — not just its cost and revenue. Applied to automatic tax filing as a case study, it shows how the value of a reform rises once accessibility and legitimacy are weighed alongside efficiency, and how automatic filing can deliver high social returns by improving access for low-income filers.</p><p class="out-blurb" data-lang="fr" hidden lang="fr">Présente le cadre MVPF-TaxAdmin, fondé sur le bien-être, pour mesurer le rendement social de chaque dollar dépensé en administration fiscale — au-delà de son seul coût et de ses recettes. À l'aide d'une étude de cas sur la production automatique des déclarations de revenus, l'article montre comment la valeur d'une réforme augmente dès lors que l'accessibilité et la légitimité sont prises en compte aux côtés de l'efficacité, et comment la production automatique peut générer des rendements sociaux élevés en améliorant l'accès pour les déclarants à faible revenu.</p>
           <div class="out-actions">
             <a class="out-link" href="https://doi.org/10.32721/ctj.2026.74.2.pf.arshad" target="_blank" rel="noopener">Read the article ↗</a>
           </div>
@@ -382,7 +395,7 @@ footer a{color:var(--on-dark);}
           <span class="out-pill">Theme 3 · Administrative Equity and Access</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.pf.petit" target="_blank" rel="noopener">Tax Filing as State Administrative Infrastructure: Governance Gaps in Canada's Tax-Based Benefit System</a></h3>
           <p class="out-authors">Gillian Petit, Lindsay M. Tedds, Jennifer Robson</p>
-          <p class="out-blurb">Argues that tax filing has quietly become the main administrative gateway to income-tested benefits across all orders of government — yet its governance still treats it as revenue collection, not benefit delivery. Shows how fragmented intergovernmental arrangements leave gaps in outreach, error correction, and access, and proposes a lighter intergovernmental agreement on filing and benefit access as Canada moves toward automatic filing.</p>
+          <p class="out-blurb" data-lang="en">Argues that tax filing has quietly become the main administrative gateway to income-tested benefits across all orders of government — yet its governance still treats it as revenue collection, not benefit delivery. Shows how fragmented intergovernmental arrangements leave gaps in outreach, error correction, and access, and proposes a lighter intergovernmental agreement on filing and benefit access as Canada moves toward automatic filing.</p><p class="out-blurb" data-lang="fr" hidden lang="fr">Soutient que la production des déclarations de revenus est devenue la principale porte d'accès administrative aux prestations fondées sur le revenu, à tous les ordres de gouvernement — alors que sa gouvernance reste axée sur la perception des recettes plutôt que sur l'accès aux prestations. L'article montre comment une gouvernance fragmentée laisse des lacunes dans la sensibilisation, la correction des erreurs et l'accès, et propose un accord intergouvernemental allégé sur la production des déclarations et l'accès aux prestations, alors que le Canada s'oriente vers la production automatique.</p>
           <div class="out-actions">
             <a class="out-link" href="https://doi.org/10.32721/ctj.2026.74.2.pf.petit" target="_blank" rel="noopener">Read the article ↗</a>
           </div>
@@ -393,7 +406,7 @@ footer a{color:var(--on-dark);}
           <span class="out-pill">Theme 3 · Administrative Equity and Access</span>
           <h3 class="out-title"><a href="https://doi.org/10.32721/ctj.2026.74.2.sym.robson" target="_blank" rel="noopener">Built for Purpose: A Permanent Public Tax Policy Advisory Body</a></h3>
           <p class="out-authors">Jennifer Robson, Yves Giroux</p>
-          <p class="out-blurb">Makes the case that a serious review of Canada's tax system is unlikely to succeed through the usual technical consultation or a time-limited commission. Draws on Canadian public administration to show why a permanent public body would offer a better forum for incremental but transformational tax reform — one that preserves democratic accountability and transparency.</p>
+          <p class="out-blurb" data-lang="en">Makes the case that a serious review of Canada's tax system is unlikely to succeed through the usual technical consultation or a time-limited commission. Draws on Canadian public administration to show why a permanent public body would offer a better forum for incremental but transformational tax reform — one that preserves democratic accountability and transparency.</p><p class="out-blurb" data-lang="fr" hidden lang="fr">Soutient qu'une révision majeure du système fiscal canadien a peu de chances d'aboutir si elle s'appuie sur la consultation technique habituelle ou sur un organisme public temporaire. S'appuyant sur des concepts clés de l'administration publique canadienne, l'article montre pourquoi un organisme public permanent offrirait un meilleur cadre pour une réforme fiscale progressive — mais transformatrice — tout en préservant la responsabilité démocratique et la transparence.</p>
           <div class="out-actions">
             <a class="out-link" href="https://doi.org/10.32721/ctj.2026.74.2.sym.robson" target="_blank" rel="noopener">Read the article ↗</a>
           </div>
@@ -451,6 +464,21 @@ footer a{color:var(--on-dark);}
         if(match)shown++;
       });
       if(empty)empty.hidden=(shown>0);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.out-lang');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var lang=b.getAttribute('data-lang');
+      btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});
+      b.classList.add('active');b.setAttribute('aria-pressed','true');
+      document.querySelectorAll('.out-blurb').forEach(function(p){
+        p.hidden=(p.getAttribute('data-lang')!==lang);
+      });
     });
   });
 })();
