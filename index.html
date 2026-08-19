@@ -130,6 +130,18 @@ nav a.active{border-bottom-color:var(--bronze);color:var(--text);}
 /* ---------- Hero ---------- */
 .hero{background:var(--ink);color:var(--on-dark);padding:76px 0 82px;}
 .hero--page{padding:56px 0 60px;}
+.hero-partners{margin:30px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.16);max-width:60ch;}
+.hero-partners .hp-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-dark-muted);margin:0 0 11px;}
+.hp-list{list-style:none;margin:0;padding:0;font-size:0.92rem;line-height:1.55;}
+.hp-list li{margin-bottom:5px;}
+.hp-list li.hp-orgs{margin-top:11px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.10);}
+.hp-people{color:var(--on-dark);}
+.hp-org{color:var(--on-dark-muted);}
+.hp-org::before{content:"\2014\00a0";}
+.hero-partners .hp-sep{color:var(--on-dark-muted);padding:0 5px;}
+.hero-partners a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.24);padding-bottom:1px;}
+.hero-partners a:hover,.hero-partners a:focus-visible{border-bottom-color:var(--bronze);}
+@media (max-width:700px){.hero-partners{margin-top:24px;}.hp-org{display:block;}.hp-org::before{content:"";}}
 .eyebrow{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--on-dark-muted);margin:0 0 22px;}
 .hero h1{font-size:clamp(2.1rem,5.2vw,3.35rem);max-width:16ch;color:#fff;}
 .hero--page h1{font-size:clamp(1.9rem,4.4vw,2.7rem);}
@@ -414,6 +426,16 @@ footer a{color:var(--on-dark);}
       <h1>Evidence for a fairer Canadian tax system</h1>
       <p class="lede">Independent research on the tax mix, redistribution, and administrative equity — measuring who pays, and who benefits.</p>
       <a class="btn" href="research.html">Explore the research</a>
+
+      <div class="hero-partners">
+        <p class="hp-label">A partnership of</p>
+        <ul class="hp-list">
+          <li><span class="hp-people"><a href="people.html">Lindsay M. Tedds</a><span class="hp-sep">&middot;</span><a href="people.html">Gillian Petit</a></span> <span class="hp-org"><a href="https://www.ucalgary.ca/" target="_blank" rel="noopener">University of Calgary</a></span></li>
+          <li><span class="hp-people"><a href="people.html">Jennifer Robson</a></span> <span class="hp-org"><a href="https://carleton.ca/" target="_blank" rel="noopener">Carleton University</a></span></li>
+          <li><span class="hp-people"><a href="people.html">Antoine Genest-Gr&eacute;goire</a></span> <span class="hp-org"><a href="https://www.usherbrooke.ca/" target="_blank" rel="noopener">Universit&eacute; de Sherbrooke</a></span></li>
+          <li class="hp-orgs"><a href="https://canadiantaxobservatory.ca/" target="_blank" rel="noopener">Canadian Tax Observatory</a><span class="hp-sep">&middot;</span><a href="https://socialcapitalpartners.ca/" target="_blank" rel="noopener">Social Capital Partners</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -435,9 +457,10 @@ footer a{color:var(--on-dark);}
       <p class="section-label">About the partnership</p>
       <h2>Canada has no shared infrastructure for evaluating whether taxation is fair. FACT is building one.</h2>
       <p>Launched in July 2026, the Fair and Accountable Canadian Taxation (FACT) Partnership is a three-year collaboration supported by a Social Sciences and Humanities Research Council Partnership Development Grant. FACT unites scholars, practitioners, and policy intermediaries to reform Canada's tax and transfer systems in ways that strengthen fairness, accountability, and trust in government. Fair taxation is foundational to economic justice and to the legitimacy democratic governance depends on.</p>
-      <p>Yet Canada's tax system is complex, fragmented, and difficult to access — hindering redistribution and fostering perceptions of unfairness. FACT develops a coordinated, evidence-based framework for assessing how Canada's tax system raises, allocates, and administers public funds, and how reforms can improve both equity and efficiency.</p>
       <p>The partnership brings together researchers at the University of Calgary, Carleton University, and Université de Sherbrooke with two national organizations — the Canadian Tax Observatory and Social Capital Partners. An equity, diversity, inclusion, and accessibility lens runs across all three research themes, and the partnership trains the next generation of applied public-finance researchers. FACT's research is academic-led and independent; findings are published openly and mobilized in both official languages.</p>
-    </div>
+
+        <p>Yet Canada's tax system is complex, fragmented, and difficult to access — hindering redistribution and fostering perceptions of unfairness. FACT develops a coordinated, evidence-based framework for assessing how Canada's tax system raises, allocates, and administers public funds, and how reforms can improve both equity and efficiency.</p>
+        </div>
   </section>
 
   <hr class="rule">
