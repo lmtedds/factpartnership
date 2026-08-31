@@ -326,6 +326,8 @@ footer a{color:var(--on-dark);}
 .out-filter:hover{border-color:var(--bronze);}
 .out-filter.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .out-empty{margin-top:30px;color:var(--muted);font-size:0.95rem;}
+.out-forth{display:inline-block;font-size:11px;letter-spacing:0.06em;font-weight:600;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:3px 9px;margin-left:10px;vertical-align:2px;}
+.out-note{font-size:0.88rem;color:var(--muted);margin:0;}
 
 .out-langtoggle{display:flex;align-items:center;gap:8px;margin:18px 0 2px;}
 .out-langtoggle-label{font-size:0.85rem;color:var(--muted);margin-right:4px;}
@@ -520,9 +522,9 @@ footer a{color:var(--on-dark);}
 
   <section>
     <div class="wrap">
-      <p class="section-label">Published outputs</p>
+      <p class="section-label">Published and forthcoming outputs</p>
       <h2>Browse by theme</h2>
-      <p class="measure">FACT's first published outputs appear in the 2026 <em>Canadian Tax Journal</em>. Filter by research theme; more formats — policy briefs, explainers, and data tools — will appear here as they are released.</p>
+      <p class="measure">FACT's first published outputs appear in the 2026 <em>Canadian Tax Journal</em>, with further work forthcoming. Filter by research theme; more formats — policy briefs, explainers, and data tools — will appear here as they are released.</p>
 
       <div class="out-filters" role="tablist" aria-label="Filter outputs by theme">
         <button class="out-filter active" data-theme="all" aria-pressed="true">All</button>
@@ -538,6 +540,15 @@ footer a{color:var(--on-dark);}
       </div>
 
       <div class="out-list">
+
+        <article class="out-card" data-theme="1">
+          <div class="out-venue">Perspectives on Tax Law &amp; Policy · Canadian Tax Foundation<span class="out-forth">Forthcoming</span></div>
+          <span class="out-pill">Theme 1 · Tax Mix, Progressivity and Fairness</span>
+          <h3 class="out-title">Universal Is Not Neutral: Who the Personal Tax System Leaves Out</h3>
+          <p class="out-authors">Gillian Petit, Lindsay M. Tedds</p>
+          <p class="out-blurb" data-lang="en">Responds to the argument that recent personal tax measures have leaned too far toward fairness at the expense of neutrality. Shows that universality and neutrality are not the same thing: a rule applied identically to everyone is not neutral when some people cannot meet what it requires. Drawing on the basic personal amount and the filing requirement attached to tax-delivered benefits, it argues that automatic filing and decoupling benefit access from the act of claiming advance neutrality and fairness together.</p><p class="out-blurb" data-lang="fr" hidden lang="fr">Répond à l'argument selon lequel les récentes mesures fiscales visant les particuliers auraient trop privilégié l'équité au détriment de la neutralité. L'article montre que l'universalité et la neutralité ne sont pas synonymes : une règle appliquée de façon identique à tous n'est pas neutre lorsque certaines personnes ne peuvent satisfaire à ses exigences. À partir du montant personnel de base et de l'obligation de produire une déclaration pour recevoir des prestations fiscales, il soutient que la production automatique des déclarations et le découplage de l'accès aux prestations font progresser à la fois la neutralité et l'équité.</p>
+          <p class="out-note">A link will be added on publication.</p>
+        </article>
 
         <article class="out-card" data-theme="2">
           <div class="out-venue">Canadian Tax Journal · 2026 · 74(2) · 383&ndash;400</div>
@@ -577,7 +588,7 @@ footer a{color:var(--on-dark);}
         </article>
 
       </div>
-      <p class="out-empty" hidden>No published outputs in this theme yet — check back soon.</p>
+      <p class="out-empty" hidden>No outputs in this theme yet — check back soon.</p>
     </div>
   </section>
 
@@ -605,7 +616,7 @@ footer a{color:var(--on-dark);}
       Department of Economics, University of Calgary
     </div>
     <div>
-      For more information: <a href="mailto:lindsay.tedds1@ucalgary.ca">lindsay.tedds1@ucalgary.ca</a><br>
+      For more information: <a href="mailto:gillian.petit@ucalgary.ca">gillian.petit@ucalgary.ca</a><br>
       &copy; 2026 FACT Partnership
     </div>
   </div>
